@@ -1,0 +1,62 @@
+# Burnout and Mental Health Analysis – Remote Work Impact (2025)
+
+
+## Project statement
+This report aims to analyse the dataset Remote Work Health Impact Survey 2025 to gain more insights about the relationship between working arrangements (remote, hybrid, onsite) and burnout rates and work-life balance across genders, industries and job levels.
+The main objective is to assist the Human Resource department to identify at-risk employee groups and with meaningful information to enhance retention strategies.
+
+## Dataset Overview
+- Source: (https://www.kaggle.com/datasets/pratyushpuri/remote-work-health-impact-survey-2025/code)
+- Format: CSV
+- Key fields: These are the main key field use in this project:
+    - `work_arrangement`
+    - `industry`
+    - `age`
+    - `gender`
+    - `job_role`
+    - `salary_range`
+    - `hours_per_week`
+    - `work_life_balance_score`
+    - `mental_health_issues`
+    - `physical_health_issues`
+- This project utilises the below tools to clean, analyse and document:
+    - SQL Server: transform data, query data based on research questions' conditions
+    - Power BI: visualize data on dashboard
+    - Markdown: for report documentation
+    
+## Data Cleaning and Transformation
+- Raw data was loaded from Kaggle into SQL Server
+- Transformed fields into new analysis table BurnOutAnalysis:
+    - `Age` grouped into `Age_Group`: `18–28`, `29–44`, `45–60`, `61+`
+    - `Hours_Per_Week` grouped into categories: `<30`, `30–39`, `40–49`, `50+`
+- In SQL queries, removed the non-informative values (e.g: `None`) in where conditions
+- Split multi-values fields (`Physical_Health_Issues`) to get all  physical health issues separately.
+
+
+## Research Questions:
+1. How does work arrangement (remote, hybrid, on-site) influence perceived burnout level?
+Onsite and hybrid workers show higher levels of burnout compared to remote workers. Among the 3 groups, onsite workers report significantly more high burnout responses. This could indicate that work commute, less flexibility or other workplace stress factors 
+
+2. Among remote employees, how do salary range and weekly working hours relate to burnout levels? Per age groups or job levels
+In general, burnout levels tend to increase as weekly working hours go up for remote workers. However, people earning between $60K–$100K and working 50+ hours seem to be more impacted than other salary groups working the same amount of hours.
+This might suggest that the mid-salary band remote employees are experiencing greater stress or job pressure. This could be due to high workloads but not receiving the same level of compensation as higher-paid roles, or getting fewer resources but with higher expectations than the lower-earning groups.
+
+3. Which mental health concerns are most strongly associated with high burnout levels, across working arrangements?
+PTSD consistently appears among the top three mental health issues linked to high burnout across all work arrangements.
+ADHD, on the other hand, seems to decrease as employees spend more time working remotely, but is reported much more often in onsite settings.
+In addition, stress disorders are noticeably less common among hybrid workers compared to remote and onsite employees.
+These trends suggest that while PTSD remains a universal concern, certain mental health issues may respond better to specific work environments. 
+
+4. Which physical health concerns are most strongly associated with high burnout levels, across working arrangements?
+Generally we could see the the ranking of physical health remain consistent with Back Pain, Eye Strain and Shoulder Pain consistently in the top 3 of physical health issues, followed by Neck Pain and Wrist Pain.
+Notably, Back Pain appears slightly lower among remote and hybrid employees. This could be associated with the more accommodating home work environments compared to office setups.
+
+6. Does work-life balance plays a role in burn-out levels?
+There appears to be a correlation between work-life balance and burnout level. As work-life balance scores decrease, the number of employees reporting high burnout increases.
+This indicates that a healthier work-life balance is associated with lower burnout rates, highlighting the importance of fostering supportive and flexible work environments.
+
+7. What job roles or industries are most at risk of burnout when working remotely?
+The Technology industry reports the highest rate of burnout — nearly double that of the second-highest, Professional Services.
+Within the technology sector, roles such as Sales Representative, Product Manager, IT Support, and Technical Writer are among the most affected, indicating these positions may be more vulnerable to stress and overwork in remote settings.
+
+
